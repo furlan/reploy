@@ -1,0 +1,4 @@
+.DS_Store
+*.tar
+manifest.txt
+.last_repack
