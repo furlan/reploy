@@ -8,7 +8,7 @@ if File.exist?('.last_repack')
   last_sha = File::read( '.last_repack' )
   
   diff_cmd = "git diff " + last_sha  + " HEAD --name-status"
-  tar_cmd = "tar -cf ../../../repack_"+ last_sha +".tar"
+  tar_cmd = "tar -cf ../repack_"+ last_sha +".tar"
 
   # put first line of manifest
   manifest = last_sha + "\n"
@@ -19,7 +19,7 @@ if File.exist?('.last_repack')
 else
   
   #cmd = "git diff  HEAD^1 HEAD --name-status"
-  tar_cmd = "tar -cf ../../../repack_initial.tar ../../."
+  tar_cmd = "tar -cf ../repack_initial.tar ."
 
   # put first line of manifest
   manifest = "initial\n"
@@ -46,7 +46,7 @@ else
 
     puts "Repacking file: " + f
 
-    f = "../../../" + f.sub(/[\n]/, ' ')
+    f = f.sub(/[\n]/, ' ')
     tar_cmd <<  f
   end
 
