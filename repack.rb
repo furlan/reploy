@@ -1,5 +1,6 @@
 require "rubygems"
 require "open4"
+# change 1
 
 # Get list of all files changes
 if File.exist?('.last_repack')
